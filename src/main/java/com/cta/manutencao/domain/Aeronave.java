@@ -10,41 +10,51 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
-public class ModeloAeronave implements Serializable {
+public class Aeronave implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String modelo;
 	
 	@OneToOne
-	@JoinColumn(name="id_tipo")
-	private TipoAeronave tipo;
+	@JoinColumn(name="id_modelo")
+	private ModeloAeronave modelo;
+	
+	private double horimetroManutencao;
+	private String nome;
+	private String identificador;
 	
 	public Integer getId() {
 		return id;
 	}
-	
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	public String getModelo() {
+	public ModeloAeronave getModelo() {
 		return modelo;
 	}
-	
-	public void setModelo(String modelo) {
+	public void setModelo(ModeloAeronave modelo) {
 		this.modelo = modelo;
 	}
-	
-	public TipoAeronave getTipo() {
-		return tipo;
+	public double getHorimetroManutencao() {
+		return horimetroManutencao;
 	}
-	
-	public void setTipo(TipoAeronave tipo) {
-		this.tipo = tipo;
+	public void setHorimetroManutencao(double horimetroManutencao) {
+		this.horimetroManutencao = horimetroManutencao;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getIdentificador() {
+		return identificador;
+	}
+	public void setIdentificador(String identificador) {
+		this.identificador = identificador;
 	}
 	
 	@Override
@@ -62,7 +72,7 @@ public class ModeloAeronave implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ModeloAeronave other = (ModeloAeronave) obj;
+		Aeronave other = (Aeronave) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -70,5 +80,6 @@ public class ModeloAeronave implements Serializable {
 			return false;
 		return true;
 	}
+	
 	
 }

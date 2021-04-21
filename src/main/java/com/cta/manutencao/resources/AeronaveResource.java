@@ -8,28 +8,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cta.manutencao.domain.ModeloAeronave;
-import com.cta.manutencao.services.ModeloAeronaveService;
+import com.cta.manutencao.domain.Aeronave;
+import com.cta.manutencao.services.AeronaveService;
+
 
 @RestController
-@RequestMapping("/modeloAeronave")
-public class ModeloAeronaveResource {
+@RequestMapping("/aeronave")
+public class AeronaveResource {
 	
 	@Autowired
-	private ModeloAeronaveService modeloAeronaveService;
+	private AeronaveService aeronaveService;
 	
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> listar(@PathVariable Integer id){
 		
-		ModeloAeronave modeloAeronave = modeloAeronaveService.buscar(id);
+		Aeronave aeronave = aeronaveService.buscar(id);
 		
-		return ResponseEntity.ok().body(modeloAeronave);
+		return ResponseEntity.ok().body(aeronave);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public ResponseEntity<Void> insert(@RequestBody ModeloAeronave modeloAeronave){
+	public ResponseEntity<Void> insert(@RequestBody Aeronave aeronave){
 		
-		modeloAeronaveService.insert(modeloAeronave);
+		aeronaveService.insert(aeronave);
 		
 		return ResponseEntity.noContent().build();
 	}

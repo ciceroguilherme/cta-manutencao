@@ -1,13 +1,10 @@
 package com.cta.manutencao.domain;
 
 import java.io.Serializable;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class TipoAeronave implements Serializable {
@@ -19,8 +16,9 @@ public class TipoAeronave implements Serializable {
 	private Integer id;
 	private String tipo;
 	
-	@OneToMany(mappedBy = "tipo")
-	private List<ModeloAeronave> modeloAeronave;
+//	@JsonBackReference
+//	@OneToMany(mappedBy = "tipo")
+//	private List<ModeloAeronave> modeloAeronave;
 	
 	public TipoAeronave() {
 		
@@ -44,13 +42,13 @@ public class TipoAeronave implements Serializable {
 		this.tipo = tipo;
 	}
 
-	public List<ModeloAeronave> getModeloAeronave() {
-		return modeloAeronave;
-	}
-
-	public void setModeloAeronave(List<ModeloAeronave> modeloAeronave) {
-		this.modeloAeronave = modeloAeronave;
-	}
+//	public List<ModeloAeronave> getModeloAeronave() {
+//		return modeloAeronave;
+//	}
+//
+//	public void setModeloAeronave(List<ModeloAeronave> modeloAeronave) {
+//		this.modeloAeronave = modeloAeronave;
+//	}
 
 	@Override
 	public int hashCode() {

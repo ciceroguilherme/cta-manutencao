@@ -19,7 +19,7 @@ public class ManutencaoService {
 		
 		Calendar data = Calendar.getInstance();
 		
-		manutencao.setDataHora(data);
+		manutencao.setLogDataHora(data);
 		
 		return repository.save(manutencao);
 	}

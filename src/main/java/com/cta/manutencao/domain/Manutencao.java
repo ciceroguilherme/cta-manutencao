@@ -33,7 +33,12 @@ public class Manutencao implements Serializable {
 	
 	private String tecnico;
 	
-	private Calendar dataHora;
+	private Calendar logDataHora;
+	
+	private Double horaProxInspecao;
+	
+	private Double saldoHoras;
+	
 
 	public Integer getId() {
 		return id;
@@ -83,12 +88,28 @@ public class Manutencao implements Serializable {
 		this.tecnico = tecnico;
 	}
 
-	public Calendar getDataHora() {
-		return dataHora;
+	public Calendar getLogDataHora() {
+		return logDataHora;
 	}
 
-	public void setDataHora(Calendar dataHora) {
-		this.dataHora = dataHora;
+	public void setLogDataHora(Calendar logDataHora) {
+		this.logDataHora = logDataHora;
+	}
+
+	public Double getHoraProxInspecao() {
+		return horaProxInspecao;
+	}
+
+	public void setHoraProxInspecao(Double horaProxInspecao) {
+		this.horaProxInspecao = horaProxInspecao;
+	}
+
+	public Double getSaldoHoras() {
+		return saldoHoras;
+	}
+
+	public void setSaldoHoras(Double saldoHoras) {
+		this.saldoHoras = saldoHoras;
 	}
 
 	@Override
